@@ -6,15 +6,19 @@ fail_compilation/attributediagnostic_nogc.d(22):        which calls `attributedi
 fail_compilation/attributediagnostic_nogc.d(23):        which calls `attributediagnostic_nogc.gc`
 fail_compilation/attributediagnostic_nogc.d(27):        which wasn't inferred `@nogc` because of:
 fail_compilation/attributediagnostic_nogc.d(27):        `asm` statement in function `attributediagnostic_nogc.gc` is assumed to use the GC - mark it with `@nogc` if it does not
+fail_compilation/attributediagnostic_nogc.d(22):        `attributediagnostic_nogc.layer1` is declared here
 fail_compilation/attributediagnostic_nogc.d(43): Error: `@nogc` function `D main` cannot call non-@nogc function `attributediagnostic_nogc.gc1`
 fail_compilation/attributediagnostic_nogc.d(32):        which wasn't inferred `@nogc` because of:
 fail_compilation/attributediagnostic_nogc.d(32):        cannot use `new` in `@nogc` function `attributediagnostic_nogc.gc1`
+fail_compilation/attributediagnostic_nogc.d(30):        `attributediagnostic_nogc.gc1` is declared here
 fail_compilation/attributediagnostic_nogc.d(44): Error: `@nogc` function `D main` cannot call non-@nogc function `attributediagnostic_nogc.gc2`
 fail_compilation/attributediagnostic_nogc.d(38):        which wasn't inferred `@nogc` because of:
 fail_compilation/attributediagnostic_nogc.d(38):        `@nogc` function `attributediagnostic_nogc.gc2` cannot call non-@nogc `fgc`
+fail_compilation/attributediagnostic_nogc.d(36):        `attributediagnostic_nogc.gc2` is declared here
 fail_compilation/attributediagnostic_nogc.d(45): Error: `@nogc` function `D main` cannot call non-@nogc function `attributediagnostic_nogc.gcClosure`
 fail_compilation/attributediagnostic_nogc.d(48):        which wasn't inferred `@nogc` because of:
 fail_compilation/attributediagnostic_nogc.d(48):        function `attributediagnostic_nogc.gcClosure` is `@nogc` yet allocates closure for `gcClosure()` with the GC
+fail_compilation/attributediagnostic_nogc.d(48):        `attributediagnostic_nogc.gcClosure` is declared here
 ---
 */
 #line 18
