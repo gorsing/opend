@@ -1847,7 +1847,10 @@ private bool checkPurity(FuncDeclaration f, const ref Loc loc, Scope* sc)
             f.toPrettyChars());
 
         if (!f.isDtorDeclaration())
-            errorSupplementalInferredAttr(f, /*max depth*/ 10, /*deprecation*/ false, STC.pure_);
+            f.errorSupplementalInferredAttr(/*max depth*/ 10, /*deprecation*/ false, STC.pure_);
+
+        const prettyChars = f.toPrettyChars();
+        .errorSupplemental(f.loc, "`%s` is declared here", prettyChars);
 
         f.checkOverriddenDtor(sc, loc, dd => dd.type.toTypeFunction().purity != PURE.impure, "impure");
         return true;
@@ -2111,7 +2114,7 @@ private bool checkSafety(FuncDeclaration f, ref Loc loc, Scope* sc)
                 sc.func.kind(), sc.func.toPrettyChars(), f.kind(),
                 prettyChars);
             if (!f.isDtorDeclaration)
-                errorSupplementalInferredAttr(f, /*max depth*/ 10, /*deprecation*/ false, STC.safe);
+                f.errorSupplementalInferredAttr(/*max depth*/ 10, /*deprecation*/ false, STC.safe);
             .errorSupplemental(f.loc, "`%s` is declared here", prettyChars);
 
             f.checkOverriddenDtor(sc, loc, dd => dd.type.toTypeFunction().trust > TRUST.system, "@system");
@@ -2172,11 +2175,14 @@ private bool checkNogc(FuncDeclaration f, ref Loc loc, Scope* sc)
                 || f.ident == Id._d_arrayappendT || f.ident == Id._d_arrayappendcTX
                 || f.ident == Id._d_arraycatnTX || f.ident == Id._d_newclassT))
             {
+                const prettyChars = f.toPrettyChars();
                 error(loc, "`@nogc` %s `%s` cannot call non-@nogc %s `%s`",
-                    sc.func.kind(), sc.func.toPrettyChars(), f.kind(), f.toPrettyChars());
+                    sc.func.kind(), sc.func.toPrettyChars(), f.kind(), prettyChars);
 
                 if (!f.isDtorDeclaration)
                     f.errorSupplementalInferredAttr(/*max depth*/ 10, /*deprecation*/ false, STC.nogc);
+
+                .errorSupplemental(f.loc, "`%s` is declared here", prettyChars);
             }
 
             f.checkOverriddenDtor(sc, loc, dd => dd.type.toTypeFunction().isnogc, "non-@nogc");

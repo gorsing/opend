@@ -111,9 +111,13 @@ public:
         auto fd = stripHookTraceImpl(e.f);
         if (fd.ident == Id._d_arraysetlengthT)
         {
-	        if (setGC(e, explicit_gc ? "setting `length` in `pragma(explicit_gc)` %s `%s` may cause a GC allocation"
-	                                 : "setting `length` in `@nogc` %s `%s` may cause a GC allocation"))
+            if (setGC(e, explicit_gc ? "setting `length` in `pragma(explicit_gc)` %s `%s` may cause a GC allocation"
+                                     : "setting `length` in `@nogc` %s `%s` may cause a GC allocation"))
+            {
+                if (fd.loc.isValid())
+                    .errorSupplemental(fd.loc, "runtime hook `%s` is declared here", fd.toPrettyChars());
                 return;
+            }
             f.printGCUsage(e.loc, "setting `length` may cause a GC allocation");
         }
     }
