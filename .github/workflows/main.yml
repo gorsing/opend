@@ -78,7 +78,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 150
     env:
-      MACOSX_DEPLOYMENT_TARGET: ${{ matrix.arch == 'arm64' && '11.0' || '10.12' }}
+      MACOSX_DEPLOYMENT_TARGET: ${{ matrix.arch == 'arm64' && '15.0' || '10.12' }}
     steps:
       - uses: actions/checkout@v4
         with:
