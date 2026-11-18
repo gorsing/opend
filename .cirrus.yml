@@ -28,7 +28,7 @@ common_steps_template: &COMMON_STEPS_TEMPLATE
   test_dmd_script: |
     if [ "${DMD_TEST_COVERAGE:-0}" == "1" ]
     then
-      OS_NAME=$OS ENABLE_RELEASE=0 ENABLE_DEBUG=1 ENABLE_COVERAGE=1 ./ci/run.sh rebuild
+      ENABLE_RELEASE=0 ENABLE_DEBUG=1 ENABLE_COVERAGE=1 ./ci/run.sh rebuild
       ./ci/run.sh test_dmd
       ./ci/run.sh codecov
     else

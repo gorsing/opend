@@ -7,12 +7,12 @@
 set -uexo pipefail
 
 # OS_NAME: linux|osx|freebsd
-if [ -z ${OS_NAME+x} ] ; then echo "Variable 'OS_NAME' needs to be set."; exit 1; fi
+if [ -z "${OS_NAME:-}" ] ; then echo "Variable 'OS_NAME' needs to be set."; exit 1; fi
 # MODEL: 32|64
-if [ -z ${MODEL+x} ] ; then echo "Variable 'MODEL' needs to be set."; exit 1; fi
+if [ -z "${MODEL:-}" ] ; then echo "Variable 'MODEL' needs to be set."; exit 1; fi
 # HOST_DMD: dmd[-<version>]|ldc[-<version>]|gdmd-<version>
-if [ ! -z ${HOST_DC+x} ] ; then HOST_DMD=${HOST_DC}; fi
-if [ -z ${HOST_DMD+x} ] ; then echo "Variable 'HOST_DMD' needs to be set."; exit 1; fi
+if [ -n "${HOST_DC:-}" ] ; then HOST_DMD=${HOST_DC}; fi
+if [ -z "${HOST_DMD:-}" ] ; then echo "Variable 'HOST_DMD' needs to be set."; exit 1; fi
 
 if [ "$OS_NAME" == "linux" ]; then
   export DEBIAN_FRONTEND=noninteractive
@@ -34,7 +34,7 @@ elif [ "$OS_NAME" == "freebsd" ]; then
   fi
   pkg install -y $packages
   # replace default make by GNU make
-  rm /usr/bin/make
-  ln -s /usr/local/bin/gmake /usr/bin/make
-  ln -s /usr/local/bin/llvm-dwarfdump12 /usr/bin/llvm-dwarfdump
+  rm -f /usr/bin/make
+  ln -sf /usr/local/bin/gmake /usr/bin/make
+  ln -sf /usr/local/bin/llvm-dwarfdump12 /usr/bin/llvm-dwarfdump
 fi

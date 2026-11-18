@@ -60,7 +60,7 @@ When an unrelated failure persists, ask a maintainer for help.
 
 ## Overview of checks
 
-There are currently 49 checks.
+There are currently 39 checks.
 
 ### Azure pipelines
 
@@ -110,7 +110,7 @@ The auto tester tests DMD on various Posix platforms.
 
 ### C++ interop tests
 
-**Config**: [azure-pipelines.yml](https://github.com/dlang/dmd/blob/master/.github/workflows/runnable_cxx.yml)
+**Config**: [runnable_cxx.yml](https://github.com/dlang/dmd/blob/master/.github/workflows/runnable_cxx.yml)
 
 **Checks**:
 - C++ interop tests / Run (macOS-11, clang-13.0.0)
@@ -166,8 +166,8 @@ These should be taken seriously, since untested code is likely to introduce bugs
 Cirrus tests DMD on Posix platforms.
 
 Since DMD is written in D, a "Host D Compiler" is needed to compile it.
-Various host compilers are tested, such as GDC, LDC, the latest DMD, and an older verison of DMD (bootstrap).
-Note that the GDC and LDC targets do not run any tests, the simply build the latest version of the dmd frontend.
+Various host compilers are tested, such as GDC, LDC, the latest DMD, and an older version of DMD (bootstrap).
+Note that the GDC and LDC targets do not run any tests, they simply build the latest version of the dmd frontend.
 
 Sometimes the macOS VMs get corrupted.
 When that happens, you can file an issue on Cirrus' issue tracker, [like this one](https://github.com/cirruslabs/macos-image-templates/issues/43).
@@ -213,4 +213,4 @@ CircleCI tests DMD on Ubuntu 18.04.
 
 It also tests that the automatically generated C++ header, frontend.h, is updated.
 This is important because other compilers sharing the front-end (LDC and GDC) rely on DMD's header files to interface with it.
-When a PR modifies an `extern(C++)` function, the corresponding signature in a .h file should be updated as well, see [cxx-headers-test](https://github.com/dlang/dmd/tree/master/src#cxx-headers-test).
+When a PR modifies an `extern(C++)` function, the corresponding signature in a .h file should be updated as well, see [cxx-headers-test](https://github.com/dlang/dmd/tree/master/compiler/src#cxx-headers-test).

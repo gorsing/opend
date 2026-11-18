@@ -11,8 +11,8 @@ then
 fi
 
 # CodeCov gets confused by lst files which it can't match
-rm -rf test/runnable/extra-files \
-    test/*.lst \
+rm -rf compiler/test/runnable/extra-files \
+    compiler/test/*.lst \
     ./*test_results-runner.lst \
     __main.lst
 
@@ -42,7 +42,7 @@ case "$UPLOADER_OS" in
         doCurl "https://codecov.io/bash" "codecov.sh"
         bash ./codecov.sh -p . -Z
         rm codecov.sh
-        return 0
+        return 0 2>/dev/null || exit 0
     ;;
 esac
 
