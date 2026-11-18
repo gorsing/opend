@@ -60,7 +60,7 @@ When an unrelated failure persists, ask a maintainer for help.
 
 ## Overview of checks
 
-There are currently 39 checks.
+There are currently 27 checks.
 
 ### Azure pipelines
 
@@ -149,28 +149,13 @@ These should be taken seriously, since untested code is likely to introduce bugs
 **Config**: [.cirrus.yml](https://github.com/dlang/dmd/blob/master/.cirrus.yml)
 
 **Checks**:
-- FreeBSD 12.3 x64, DMD (bootstrap)
 - FreeBSD 13.0 x64, DMD (coverage)
-- FreeBSD 13.0 x64, DMD (latest)
-- Ubuntu 22.04 x64, DMD (bootstrap)
-- Ubuntu 22.04 x64, DMD (latest)
-- Ubuntu 22.04 x64, GDC
-- Ubuntu 22.04 x64, LDC
-- Ubuntu 22.04 x86, DMD (bootstrap)
-- Ubuntu 22.04 x86, DMD (coverage)
-- Ubuntu 22.04 x86, DMD (latest)
-- macOS 12.x x64 (M1), DMD (bootstrap)
-- macOS 13.x x64 (M1), DMD (coverage)
-- macOS 13.x x64 (M1), DMD (latest)
 
-Cirrus tests DMD on Posix platforms.
+Cirrus tests DMD on Posix platforms. Only the FreeBSD 13.0 coverage job is defined in this repository's `.cirrus.yml`; the macOS and Ubuntu jobs from upstream are not present here.
 
 Since DMD is written in D, a "Host D Compiler" is needed to compile it.
 Various host compilers are tested, such as GDC, LDC, the latest DMD, and an older version of DMD (bootstrap).
 Note that the GDC and LDC targets do not run any tests, they simply build the latest version of the dmd frontend.
-
-Sometimes the macOS VMs get corrupted.
-When that happens, you can file an issue on Cirrus' issue tracker, [like this one](https://github.com/cirruslabs/macos-image-templates/issues/43).
 
 ### pre-commit
 

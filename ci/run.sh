@@ -35,7 +35,19 @@ else
     NM=nm
 
   if [ "$OS_NAME" == "osx" ]; then
-    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    # Homebrew uses /opt/homebrew on Apple Silicon and /usr/local on Intel
+    brew_prefix=""
+    if command -v brew > /dev/null; then
+      brew_prefix="$(brew --prefix 2>/dev/null || true)"
+    fi
+    for prefix in "$brew_prefix" /opt/homebrew /usr/local; do
+      if [ -n "$prefix" ] && [ -d "$prefix/opt/llvm/bin" ]; then
+        export PATH="$prefix/opt/llvm/bin:$PATH"
+        break
+      fi
+    done
+    # Apple Silicon requires macOS 11+; pin the target on newer runners
+    export MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET:-11}"
   fi
 fi
 
