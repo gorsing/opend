@@ -1211,3 +1211,5 @@ int main()
     printf("Success\n");
     return 0;
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

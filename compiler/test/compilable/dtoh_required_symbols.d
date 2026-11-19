@@ -51,7 +51,7 @@ struct ExternDStruct final
         d()
     {
     }
-    ExternDStruct(int32_t i, double d = NAN) :
+    ExternDStruct(int32_t i, double d = 0.0) :
         i(i),
         d(d)
         {}
@@ -85,6 +85,8 @@ public:
         virtual void __vtable_slot_5();
     };
 
+private:
+    virtual void __vtable_slot_6();
 };
 
 class ExternDClass : public Object

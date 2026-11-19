@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // https://issues.dlang.org/show_bug.cgi?id=22666
 
 __import core.stdc.stdarg;

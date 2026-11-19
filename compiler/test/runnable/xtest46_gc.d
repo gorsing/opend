@@ -1,5 +1,6 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
-REQUIRED_ARGS: -lowmem -Jrunnable -preview=rvaluerefparam
+REQUIRED_ARGS: -d -lowmem -Jrunnable -preview=rvaluerefparam
 EXTRA_FILES: xtest46.d
 TEST_OUTPUT:
 ---

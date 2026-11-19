@@ -349,6 +349,7 @@ unittest {
 }
 
 class C {
+    mixin EnableSynchronization;
     invariant() {
         if (true)
             assert(58);

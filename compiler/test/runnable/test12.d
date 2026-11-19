@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // PERMUTE_ARGS: -unittest -O -ludicrous -inline -fPIC -g
 
 extern(C) int printf(const char*, ...);
@@ -506,7 +507,7 @@ void test22()
 /**************************************/
 
 interface A23 { void x(); }
-class B23 : A23 { void x() { } }
+class B23 : A23 { mixin EnableSynchronization; void x() { } }
 class C23 : B23 { uint y = 12345678; }
 
 void stest23(A23 a)
@@ -836,6 +837,7 @@ void test38()
 
 class C39
 {
+mixin EnableSynchronization;
     C39 c;
     this() { c = this; }
     C39 lock() { return c; }

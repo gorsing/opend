@@ -5,10 +5,10 @@ LINK:
 TRANSFORM_OUTPUT: remove_lines(druntime)
 TEST_OUTPUT:
 ---
-$r:.*makedeps_lib_$0.$?:windows=lib|a$: \
-  $p:makedeps_lib.d$ \
-  $p:imports/makedeps_a.d$ \
-  $p:makedeps-import.txt$ \
+{{RESULTS_DIR}}/compilable/makedeps_lib.o: \
+  compilable/makedeps_lib.d \
+  compilable/imports/makedeps_a.d \
+  compilable/extra-files/makedeps-import.txt \
 ---
 **/
 // Disabling on windows because default naming of -lib seems broken (names to .exe)

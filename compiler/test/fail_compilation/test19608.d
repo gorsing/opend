@@ -14,3 +14,5 @@ void h()
     g(&f);  // OK, function address
     g(*&f); // ICE -> Error
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

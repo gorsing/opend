@@ -21,3 +21,5 @@ void foo()
         scope int x;
     }
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

@@ -3,7 +3,9 @@
 // EXTRA_FILES: imports/a12506.d
 /* TEST_OUTPUT:
 ---
-compilable/compile1.d(230): Deprecation: use of complex type `cdouble` is deprecated, use `std.complex.Complex!(double)` instead
+compilable/compile1.d(232): Deprecation: use of complex type `cdouble` is deprecated, use `std.complex.Complex!(double)` instead
+compilable/compile1.d(940): Deprecation: `void` initializers for pointers not allowed in non-`@system`/`@trusted` code
+compilable/compile1.d(942): Deprecation: `void` initializers for pointers not allowed in non-`@system`/`@trusted` code
 ---
 */
 

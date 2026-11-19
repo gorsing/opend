@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // PERMUTE_ARGS:
 // https://issues.dlang.org/show_bug.cgi?id=20687
 

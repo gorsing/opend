@@ -4,7 +4,7 @@ RUN_OUTPUT:
 Success
 ---
 */
-// REQUIRED_ARGS:
+// REQUIRED_ARGS: -d
 
 // Test array bounds checking
 

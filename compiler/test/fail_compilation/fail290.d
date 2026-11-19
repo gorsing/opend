@@ -14,3 +14,5 @@ void main()
 {
     void delegate (int) a = &Foo.foo;
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

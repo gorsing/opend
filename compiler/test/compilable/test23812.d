@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/imp23812.c
 
 import imports.imp23812;

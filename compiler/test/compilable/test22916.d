@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -preview=dip1000
+// REQUIRED_ARGS: -d -preview=dip1000
 
 // https://issues.dlang.org/show_bug.cgi?id=22916
 // Issue 22916 - [dip1000] copy of ref return still treated as scope variable (edit)

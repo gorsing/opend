@@ -2,7 +2,11 @@
 EXTRA_FILES: imports/ice11513x.d
 TEST_OUTPUT:
 ---
-fail_compilation/imports/ice11513x.d(1): Error: package name 'ice11513a' conflicts with usage as a module name in file fail_compilation/ice11513a.d
+fail_compilation/ice11513a.d(15): Error: unable to read module `imports`
+fail_compilation/ice11513a.d(15):        Expected 'ice11513a/imports.d' or 'ice11513a/imports/package.d' in one of the following import paths:
+import path[0] = fail_compilation
+import path[1] = /workspace/compiler/test/../../druntime/import
+import path[2] = /workspace/compiler/test/../../phobos
 ---
 */
 

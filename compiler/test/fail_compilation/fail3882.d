@@ -2,8 +2,9 @@
 PERMUTE_ARGS: -debug
 TEST_OUTPUT:
 ---
-fail_compilation/fail3882.d(32): Error: `@mustuse` on functions is reserved for future use
-fail_compilation/fail3882.d(33): Error: `@mustuse` on functions is reserved for future use
+fail_compilation/fail3882.d(23): Error: ignored value of `@mustuse` function call `fail3882.strictlyPure!int.strictlyPure`; prepend a `cast(void)` if intentional
+fail_compilation/fail3882.d(38): Error: ignored value of `@mustuse` function call `fail3882.f1`; prepend a `cast(void)` if intentional
+fail_compilation/fail3882.d(39): Error: ignored value of `@mustuse` function call `fail3882.f2`; prepend a `cast(void)` if intentional
 ---
 */
 import core.attribute;

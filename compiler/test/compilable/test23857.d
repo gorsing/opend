@@ -1,4 +1,4 @@
-/* REQUIRED_ARGS: -O -inline -ludicrous
+/* REQUIRED_ARGS: -d -O -inline -ludicrous
  */
 
 // https://issues.dlang.org/show_bug.cgi?id=23857

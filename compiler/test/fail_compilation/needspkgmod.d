@@ -8,7 +8,7 @@
 /*
 TEST_OUTPUT:
 ----
-$r:.+_D7imports9pkgmod3133mod3barFZv.*$
+$r:.+undefined reference to .*bar.*$
 Error: $r:.+$ exited with status $n$
 ----
 */

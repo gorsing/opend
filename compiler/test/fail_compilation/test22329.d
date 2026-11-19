@@ -20,3 +20,5 @@ void main()
     import imports.imp22329 : func;
     func(Foo());
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

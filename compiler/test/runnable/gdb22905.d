@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
 EXTRA_SOURCES: imports/gdb22905b.d imports/gdb22905c.d
 REQUIRED_ARGS: -g

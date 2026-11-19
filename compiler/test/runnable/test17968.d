@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 /*
 COMPILE_SEPARATELY:
 EXTRA_SOURCES: imports/test17968a.d

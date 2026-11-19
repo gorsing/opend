@@ -1,5 +1,5 @@
 // PERMUTE_ARGS: -unittest -O -ludicrous -inline -fPIC -g
-// REQUIRED_ARGS: -preview=dtorfields
+// REQUIRED_ARGS: -d -preview=dtorfields
 /*
 TEST_OUTPUT:
 ---

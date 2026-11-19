@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/link14074z.d
 import imports.link14074z;
 

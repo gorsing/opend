@@ -19,3 +19,5 @@ void main(){
     static a = new A("a");
     __gshared b = new A("b");
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

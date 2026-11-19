@@ -7,6 +7,8 @@ toHash
 opCmp
 opEquals
 Monitor
+__monitor
+EnableSynchronization
 factory
 ---
 */

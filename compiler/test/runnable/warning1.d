@@ -45,6 +45,7 @@ private int getNthInt(A...)(uint index, A args)
 /******************************************/
 
 class Foo2 {
+mixin EnableSynchronization;
     int foo() {
         synchronized(this){
             return 8;
@@ -149,6 +150,7 @@ struct S9332
 
 class C13201
 {
+mixin EnableSynchronization;
     void foo()
     {
         synchronized(this)

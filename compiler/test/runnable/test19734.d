@@ -1,5 +1,5 @@
 // https://issues.dlang.org/show_bug.cgi?id=19734
-// REQUIRED_ARGS: -main
+// REQUIRED_ARGS: -d -main
 
 class C19734
 {

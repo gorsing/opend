@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // Test UnaryExp (expr)++ parsing
 
 void main(){

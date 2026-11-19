@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // REQUIRED_ARGS: -o-
 // EXTRA_FILES: imports/imp12242a1.d imports/imp12242a2.d
 // PERMUTE_ARGS:

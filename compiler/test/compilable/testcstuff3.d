@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/cstuff3.c
 import imports.cstuff3;
 

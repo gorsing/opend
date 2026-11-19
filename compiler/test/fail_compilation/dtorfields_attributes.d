@@ -1,7 +1,7 @@
 /*
 Informative error messages if the compiler inserted an optional destructor call into the constructor.
 
-REQUIRED_ARGS: -preview=dtorfields
+REQUIRED_ARGS: -d -preview=dtorfields
 TEST_OUTPUT:
 ---
 fail_compilation/dtorfields_attributes.d(117): Error: `pure` constructor `dtorfields_attributes.Strict.this` cannot call impure destructor `dtorfields_attributes.Strict.~this`

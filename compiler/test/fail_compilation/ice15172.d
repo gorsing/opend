@@ -31,3 +31,5 @@ void onThreadError()
     //    7b. the function body errors may not happen during ctfeInterpret call and global.errors could be unincremented.
     __gshared auto ThreadError = new ThreadError(null);
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

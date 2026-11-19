@@ -2,7 +2,6 @@
 /*
 TEST_OUTPUT:
 ---
-compilable/interpret3.d(6350): Deprecation: identity comparison of static arrays implicitly coerces them to slices, which are compared by reference
 ---
 */
 
@@ -7906,3 +7905,5 @@ bool testSArrayTupleB()
     return true;
 }
 static assert(testSArrayTupleB());
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

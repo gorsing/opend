@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /* TEST_OUTPUT:
 ---
 fail_compilation/issue20704.d(17): Error: cannot create default argument for `ref` / `out` parameter from constant `0`

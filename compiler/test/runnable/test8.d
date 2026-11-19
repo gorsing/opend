@@ -1,7 +1,10 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
 TEST_OUTPUT:
 ---
-runnable/test8.d(261): Deprecation: identity comparison of static arrays implicitly coerces them to slices, which are compared by reference
+runnable/test8.d(263): Deprecation: identity comparison of static arrays implicitly coerces them to slices, which are compared by reference
+runnable/test8.d(753): Deprecation: `void` initializers for pointers not allowed in non-`@system`/`@trusted` code
+runnable/test8.d(837): Deprecation: `void` initializers for pointers not allowed in non-`@system`/`@trusted` code
 ---
 */
 

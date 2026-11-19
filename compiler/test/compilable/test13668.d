@@ -3,7 +3,7 @@
 /*
 TEST_OUTPUT:
 ---
-AliasSeq!("id", "toString", "toHash", "opCmp", "opEquals", "Monitor", "factory")
+AliasSeq!("id", "toString", "toHash", "opCmp", "opEquals", "Monitor", "__monitor", "EnableSynchronization", "factory")
 genProps
 ---
 */

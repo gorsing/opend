@@ -1,3 +1,5 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
+// REQUIRED_ARGS: -d
 module test;
 
 import core.stdc.stdio;

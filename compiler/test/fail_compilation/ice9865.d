@@ -8,3 +8,5 @@ fail_compilation/ice9865.d(9): Error: alias `ice9865.Baz` recursive alias declar
 
 public import imports.ice9865b : Baz;
 struct Foo { Baz f; }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

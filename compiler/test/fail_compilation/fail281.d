@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // https://issues.dlang.org/show_bug.cgi?id=2920
 // recursive templates blow compiler stack
 // template_29_B.

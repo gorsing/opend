@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // https://issues.dlang.org/show_bug.cgi?id=23103
 // Issue 23103 - static initialization of associative arrays is not implemented
 

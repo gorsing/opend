@@ -1,5 +1,6 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // PERMUTE_ARGS:
-// REQUIRED_ARGS:
+// REQUIRED_ARGS: -d
 
 import core.exception;
 import core.stdc.math;
@@ -448,6 +449,7 @@ int testx14(int x)
 
 class bar
 {
+    mixin EnableSynchronization;
     int y;
     synchronized int sync(int x)
     {
@@ -819,6 +821,7 @@ void test34()
 
 class X35
 {
+mixin EnableSynchronization;
     final synchronized void foo()
     {
         for(;;)

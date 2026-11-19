@@ -2,7 +2,9 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/diag20518.d(11): Error: module `diag20518a` from file fail_compilation/imports/diag20518a.d conflicts with package `imports.diag20518a`
+fail_compilation/diag20518.d(11): Deprecation: from file b.d should be imported with 'import b;'
+fail_compilation/diag20518.d(13): Deprecation: from file diag20518a.d should be imported with 'import diag20518a;'
+fail_compilation/diag20518.d(13): Error: module `diag20518a` from file fail_compilation/imports/diag20518a.d conflicts with package `imports.diag20518a`
 ---
 */
 

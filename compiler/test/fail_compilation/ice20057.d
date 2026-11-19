@@ -15,3 +15,5 @@ extern(C++) interface Inter
 }
 
 BlackHole!Inter var;
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

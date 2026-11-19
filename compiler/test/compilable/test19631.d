@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 struct Field(int _w, int _h)
 {
     bool[_h][_w] s;

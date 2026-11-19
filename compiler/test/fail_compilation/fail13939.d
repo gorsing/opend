@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -o- -fPIC
+// REQUIRED_ARGS: -d -o- -fPIC
 // DISABLED: win32 win64
 /*
 TEST_OUTPUT:

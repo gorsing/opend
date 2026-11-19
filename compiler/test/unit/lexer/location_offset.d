@@ -459,6 +459,7 @@ enum Test[string] tests = [
 // Ignore tokens not produced by the lexer or tested above
 enum ignoreTokens
 {
+    _module,
     reserved,
     negate,
     array,

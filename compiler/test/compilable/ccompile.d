@@ -1,5 +1,5 @@
 
-/* REQUIRED_ARGS: -O
+/* REQUIRED_ARGS: -d -O
  */
 
 // Adapted from DMC++ test file test3/ccompile.c

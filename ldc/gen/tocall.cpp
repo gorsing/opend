@@ -1049,7 +1049,11 @@ DValue *DtoCallFunction(const Loc &loc, Type *resulttype, DValue *fnval,
     call->setCallingConv(cf->getCallingConv());
     if (cf->isIntrinsic()) { // override intrinsic attrs
       attrlist =
-          llvm::Intrinsic::getAttributes(gIR->context(), cf->getIntrinsicID());
+          llvm::Intrinsic::getAttributes(gIR->context(), cf->getIntrinsicID()
+#if LDC_LLVM_VER >= 2100
+                                         , cf->getFunctionType()
+#endif
+          );
     }
   } else if (dfnval) {
     call->setCallingConv(getCallingConvention(dfnval->func));

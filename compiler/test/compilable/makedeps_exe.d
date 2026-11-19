@@ -5,11 +5,11 @@ LINK:
 TRANSFORM_OUTPUT: remove_lines(druntime)
 TEST_OUTPUT:
 ---
-$r:.*makedeps_exe_$0$?:windows=.exe$: \
-  $p:makedeps_exe.d$ \
-  $p:makedeps_a.d$ \
-  $p:makedeps-import.txt$ \
-  $p:makedeps-import-codemixin.txt$ \
+{{RESULTS_DIR}}/compilable/makedeps_exe_0.o: \
+  compilable/makedeps_exe.d \
+  compilable/imports/makedeps_a.d \
+  compilable/extra-files/makedeps-import.txt \
+  compilable/extra-files/makedeps-import-codemixin.txt \
 ---
 **/
 module makedeps_exe;

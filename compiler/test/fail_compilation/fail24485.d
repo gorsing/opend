@@ -2,9 +2,10 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/fail24485.d(25): Error: cannot implicitly convert expression `*a` of type `A` to `B`
-fail_compilation/fail24485.d(31): Error: cannot implicitly convert expression `this.a` of type `A` to `B`
-
+fail_compilation/fail24485.d(26): Error: cannot implicitly convert expression `*a` of type `A` to `B`
+fail_compilation/fail24485.d(26): Error: cannot implicitly convert expression `*a` of type `A` to `B`
+fail_compilation/fail24485.d(32): Error: cannot implicitly convert expression `this.a` of type `A` to `B`
+fail_compilation/fail24485.d(32): Error: cannot implicitly convert expression `this.a` of type `A` to `B`
 ---
 */
 

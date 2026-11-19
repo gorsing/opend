@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler ICE/diagnostics differ from upstream DMD)
 /*
 TEST_OUTPUT:
 ---

@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 /* RUN_OUTPUT:
 ---
 value: -5

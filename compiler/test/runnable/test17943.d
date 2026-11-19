@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -O
+// REQUIRED_ARGS: -d -O
 
 void main()
 {

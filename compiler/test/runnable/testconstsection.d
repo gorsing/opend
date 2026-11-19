@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 
 string tls_var = "tls_string";
 

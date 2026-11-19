@@ -2,20 +2,20 @@
 TEST_OUTPUT:
 ---
 fail_compilation/hexstring.d(29): Error: cannot implicitly convert expression `"123F"` of type `string` to `immutable(ubyte[])`
+fail_compilation/hexstring.d(30): Error: cannot implicitly convert expression `"\x12?"c` of type `string` to `immutable(ubyte[])`
+fail_compilation/hexstring.d(31): Error: cannot implicitly convert expression `"\x12?"` of type `string` to `immutable(ubyte[])`
 fail_compilation/hexstring.d(33): Error: hex string length 1 must be a multiple of 2 to cast to `immutable(ushort[])`
 fail_compilation/hexstring.d(34): Error: hex string length 3 must be a multiple of 4 to cast to `immutable(uint[])`
 fail_compilation/hexstring.d(35): Error: hex string length 5 must be a multiple of 8 to cast to `immutable(ulong[])`
 fail_compilation/hexstring.d(36): Error: array cast from `wstring` to `immutable(ulong[])` is not supported at compile time
-fail_compilation/hexstring.d(36):        perhaps remove postfix `w` from hex string
 fail_compilation/hexstring.d(37): Error: array cast from `string` to `immutable(uint[])` is not supported at compile time
 fail_compilation/hexstring.d(38): Error: array cast from `string` to `immutable(ushort[])` is not supported at compile time
 fail_compilation/hexstring.d(39): Error: array cast from `string` to `immutable(uint[])` is not supported at compile time
-fail_compilation/hexstring.d(39):        perhaps remove postfix `c` from hex string
-fail_compilation/hexstring.d(40): Error: hex string with `dstring` type needs to be multiple of 4 bytes, not 5
-fail_compilation/hexstring.d(41): Error: cannot implicitly convert expression `x"11223344"d` of type `dstring` to `immutable(float[])`
-fail_compilation/hexstring.d(42): Error: cannot implicitly convert expression `x"1122"w` of type `wstring` to `immutable(ubyte[])`
+fail_compilation/hexstring.d(40): Error: cannot implicitly convert expression `"\x11\"3DU"d` of type `dstring` to `immutable(uint[])`
+fail_compilation/hexstring.d(41): Error: cannot implicitly convert expression `"\x11\"3D"d` of type `dstring` to `immutable(float[])`
+fail_compilation/hexstring.d(42): Error: cannot implicitly convert expression `"\x11\""w` of type `wstring` to `immutable(ubyte[])`
 fail_compilation/hexstring.d(50): Error: array cast from `string` to `S[]` is not supported at compile time
-fail_compilation/hexstring.d(28): Error: cannot implicitly convert expression `x"123F"` of type `string` to `ubyte[]`
+fail_compilation/hexstring.d(28): Error: cannot implicitly convert expression `"\x12?"` of type `string` to `ubyte[]`
 ---
 */
 immutable ubyte[] s0 = x"123F";

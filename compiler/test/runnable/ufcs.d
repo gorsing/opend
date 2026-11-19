@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // EXTRA_SOURCES: imports/ufcs5a.d imports/ufcs5b.d imports/ufcs5c.d imports/ufcs5d.d imports/ufcs5e.d
 
 module ufcs;

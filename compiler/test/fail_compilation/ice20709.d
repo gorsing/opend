@@ -12,3 +12,5 @@ import imports.imp20709 : Point;
 immutable Point aPoint = somePoint;
 
 Point somePoint() {}
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

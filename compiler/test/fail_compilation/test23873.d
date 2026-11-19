@@ -12,3 +12,5 @@ struct Foo
 {
     import imports.import23873;
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

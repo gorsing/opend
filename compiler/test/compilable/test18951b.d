@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: test18951a.d
 module compilable.test18951b;
 

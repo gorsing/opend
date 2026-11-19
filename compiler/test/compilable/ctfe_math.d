@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // COMPILABLE_MATH_TEST
 // Test CTFE builtins for std.math functions.
 

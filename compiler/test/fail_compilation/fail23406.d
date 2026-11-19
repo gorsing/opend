@@ -3,7 +3,8 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/fail23406.d(39): Error: cannot implicitly convert expression `0` of type `int` to `alphakey`
+fail_compilation/fail23406.d(40): Error: cannot implicitly convert expression `0` of type `int` to `alphakey`
+fail_compilation/fail23406.d(40): Error: cannot implicitly convert expression `0` of type `int` to `alphakey`
 ---
 */
 

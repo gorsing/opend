@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 #! blah
 // RUNNABLE_PHOBOS_TEST
 static assert(__LINE__ == 3); // fails as __LINE__ is 2

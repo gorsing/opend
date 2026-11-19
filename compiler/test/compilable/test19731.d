@@ -65,6 +65,7 @@ class Ensure19731
 
 class Sync19731
 {
+mixin EnableSynchronization;
     Object obj_;
 
     invariant (obj_ !is null);

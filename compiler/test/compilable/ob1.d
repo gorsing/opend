@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -preview=dip1021
+// REQUIRED_ARGS: -d -preview=dip1021
 
 /* Should compile successfully
  */

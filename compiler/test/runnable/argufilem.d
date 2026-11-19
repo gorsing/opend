@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 /*
 EXTRA_SOURCES: imports/argufile.d
 RUN_OUTPUT:

@@ -16,3 +16,5 @@ void testFunctionMembers()() {
         bool b = isFunction!(__traits(getMember, ice19661, member));
     }
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

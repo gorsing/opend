@@ -1,4 +1,3 @@
-// REQUIRED_ARGS:
 /*
 TEST_OUTPUT:
 ---
@@ -254,3 +253,5 @@ void main()
     test11();
     printf("Success\n");
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

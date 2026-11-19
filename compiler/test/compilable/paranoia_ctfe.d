@@ -1,6 +1,6 @@
 /*
 EXTRA_SOURCES: ../runnable/extra-files/paranoia.d
-REQUIRED_ARGS: -o- -version=CTFE
+REQUIRED_ARGS: -d -o- -version=CTFE
 
 ARG_SETS: -version=Single
 ARG_SETS: -version=Double

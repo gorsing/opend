@@ -1,5 +1,5 @@
 /* Testing Ownership/Borrowing system
-REQUIRED_ARGS: -preview=dip1021
+REQUIRED_ARGS: -d -preview=dip1021
  */
 
 int* malloc();

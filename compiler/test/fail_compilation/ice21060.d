@@ -2,7 +2,7 @@
 EXTRA_FILES: imports/ice21060a/package.d imports/ice21060b/package.d imports/ice21060c/package.d imports/ice21060d/package.d
 TEST_OUTPUT:
 ---
-fail_compilation/imports/ice21060b/package.d(3): Error: struct `imports.ice21060d.P21060` already exists at fail_compilation/imports/ice21060d/package.d(3). Perhaps in another function with the same name?
+fail_compilation/ice21060.d(13): Error: from file package.d must be imported with 'import imports.ice21060d;'
 ---
 */
 struct S21060
@@ -13,3 +13,5 @@ struct S21060
         import imports.ice21060b;
     }
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d
