@@ -1076,6 +1076,30 @@ void registerPredefinedVersions() {
   VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_" XSTR(LDC_LLVM_VER));
 #undef XSTR
 #undef STR
+#if LDC_LLVM_VER >= 2100
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_2100");
+#endif
+#if LDC_LLVM_VER >= 2000
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_2000");
+#endif
+#if LDC_LLVM_VER >= 1901
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1901");
+#endif
+#if LDC_LLVM_VER >= 1801
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1801");
+#endif
+#if LDC_LLVM_VER >= 1800
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1800");
+#endif
+#if LDC_LLVM_VER >= 1700
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1700");
+#endif
+#if LDC_LLVM_VER >= 1600
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1600");
+#endif
+#if LDC_LLVM_VER >= 1500
+  VersionCondition::addPredefinedGlobalIdent("LDC_LLVM_1500");
+#endif
 }
 
 static llvm::SmallString<32> tempObjectsDir;

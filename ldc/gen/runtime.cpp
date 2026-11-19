@@ -42,6 +42,13 @@
 
 using namespace dmd;
 
+#if LDC_LLVM_VER >= 2100
+#define LL_NOCAPTURE                                                           \
+  llvm::Attribute::getWithCaptureInfo(gIR->context(), llvm::CaptureInfo::none())
+#else
+#define LL_NOCAPTURE llvm::Attribute::NoCapture
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 
 static llvm::cl::opt<bool> nogc(
@@ -525,24 +532,24 @@ static void buildRuntimeModule() {
       Attr_ReadOnly_NoUnwind(Attr_ReadOnly, LLAttributeList::FunctionIndex,
                              llvm::Attribute::NoUnwind),
       Attr_ReadOnly_1_NoCapture(Attr_ReadOnly, LLAttributeList::FirstArgIndex,
-                                llvm::Attribute::NoCapture),
+                                LL_NOCAPTURE),
       Attr_ReadOnly_1_3_NoCapture(Attr_ReadOnly_1_NoCapture,
                                   LLAttributeList::FirstArgIndex + 2,
-                                  llvm::Attribute::NoCapture),
+                                  LL_NOCAPTURE),
       Attr_ReadOnly_NoUnwind_1_NoCapture(Attr_ReadOnly_1_NoCapture,
                                          LLAttributeList::FunctionIndex,
                                          llvm::Attribute::NoUnwind),
       Attr_ReadOnly_NoUnwind_1_2_NoCapture(Attr_ReadOnly_NoUnwind_1_NoCapture,
                                            LLAttributeList::FirstArgIndex + 1,
-                                           llvm::Attribute::NoCapture),
+                                           LL_NOCAPTURE),
       Attr_1_NoCapture(NoAttrs, LLAttributeList::FirstArgIndex,
-                       llvm::Attribute::NoCapture),
+                       LL_NOCAPTURE),
       Attr_1_2_NoCapture(Attr_1_NoCapture, LLAttributeList::FirstArgIndex + 1,
-                         llvm::Attribute::NoCapture),
+                         LL_NOCAPTURE),
       Attr_1_3_NoCapture(Attr_1_NoCapture, LLAttributeList::FirstArgIndex + 2,
-                         llvm::Attribute::NoCapture),
+                         LL_NOCAPTURE),
       Attr_1_4_NoCapture(Attr_1_NoCapture, LLAttributeList::FirstArgIndex + 3,
-                         llvm::Attribute::NoCapture);
+                         LL_NOCAPTURE);
 
   //////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////
