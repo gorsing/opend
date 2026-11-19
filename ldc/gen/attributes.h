@@ -23,6 +23,7 @@ public:
   AttrSet() = default;
   AttrSet(const LLAttributeList &nativeSet) : set(nativeSet) {}
   AttrSet(const AttrSet &base, unsigned index, LLAttribute attribute);
+  AttrSet(const AttrSet &base, unsigned index, const llvm::Attribute &attribute);
 
   static AttrSet
   extractFunctionAndReturnAttributes(const llvm::Function *function);

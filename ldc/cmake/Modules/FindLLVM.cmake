@@ -39,6 +39,10 @@ set(llvm_config_names llvm-config-17.0 llvm-config170 llvm-config-17
                       llvm-config-13.0 llvm-config130 llvm-config-13
                       llvm-config-12.0 llvm-config120 llvm-config-12
                       llvm-config-11.0 llvm-config110 llvm-config-11
+                      llvm-config-21.0 llvm-config210 llvm-config-21
+                      llvm-config-20.0 llvm-config200 llvm-config-20
+                      llvm-config-19.0 llvm-config190 llvm-config-19
+                      llvm-config-18.0 llvm-config180 llvm-config-18
                       llvm-config)
 find_program(LLVM_CONFIG
     NAMES ${llvm_config_names}
@@ -49,11 +53,17 @@ if(APPLE)
     # extra fallbacks for MacPorts & Homebrew
     find_program(LLVM_CONFIG
         NAMES ${llvm_config_names}
-        PATHS /opt/local/libexec/llvm-17/bin
+        PATHS /opt/local/libexec/llvm-21/bin
+              /opt/local/libexec/llvm-20/bin /opt/local/libexec/llvm-19/bin
+              /opt/local/libexec/llvm-18/bin
+              /opt/local/libexec/llvm-17/bin
               /opt/local/libexec/llvm-16/bin /opt/local/libexec/llvm-15/bin
               /opt/local/libexec/llvm-14/bin /opt/local/libexec/llvm-13/bin
               /opt/local/libexec/llvm-12/bin /opt/local/libexec/llvm-11/bin
               /opt/local/libexec/llvm/bin
+              /usr/local/opt/llvm@21/bin
+              /usr/local/opt/llvm@20/bin /usr/local/opt/llvm@19/bin
+              /usr/local/opt/llvm@18/bin
               /usr/local/opt/llvm@17/bin
               /usr/local/opt/llvm@16/bin /usr/local/opt/llvm@15/bin
               /usr/local/opt/llvm@14/bin /usr/local/opt/llvm@13/bin
