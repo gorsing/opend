@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 template forward(args...)
 {
     @property fwd()() { return args[0]; }

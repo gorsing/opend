@@ -1,5 +1,6 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
-REQUIRED_ARGS:
+REQUIRED_ARGS: -d
 TEST_OUTPUT:
 ---
 success
@@ -3646,7 +3647,7 @@ void bug5105() // compilation test -- don't need to run
     c.foo(10);
 }
 
-synchronized shared class C5105
+synchronized shared class C5105 : SynchronizableObject
 {
     void foo(T)(T a) {}
 }

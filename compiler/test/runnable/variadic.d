@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 alias TypeTuple(T...) = T;
 
 class A { }

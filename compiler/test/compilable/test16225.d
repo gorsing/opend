@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -O -m64
+// REQUIRED_ARGS: -d -O -m64
 // PERMUTE_ARGS:
 
 // https://issues.dlang.org/show_bug.cgi?id=16225

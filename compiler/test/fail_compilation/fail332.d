@@ -54,3 +54,5 @@ void test2()
     bar(null, 2, "");
     bar(null, 2,3,4);
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

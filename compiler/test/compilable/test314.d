@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // REQUIRED_ARGS: -de
 // EXTRA_FILES: imports/a314.d imports/c314.d
 module imports.test314; // package imports

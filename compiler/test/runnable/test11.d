@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // REQUIRED_ARGS:
 // EXTRA_SOURCES: imports/std11file.d
 

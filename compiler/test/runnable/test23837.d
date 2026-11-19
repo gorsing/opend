@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // https://issues.dlang.org/show_bug.cgi?id=23837
 // EXTRA_FILES: imports/mainx23837.c
 

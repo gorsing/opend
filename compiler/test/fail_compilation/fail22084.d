@@ -21,3 +21,5 @@ void test()
     auto a0 = Destructor();
     testVariadic(1, a0);
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

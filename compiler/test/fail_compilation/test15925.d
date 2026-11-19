@@ -17,3 +17,5 @@ class Foo
     mixin Import!();
     static assert(X == 1);
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

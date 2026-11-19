@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 import core.vararg;
 import core.stdc.stdio;
 

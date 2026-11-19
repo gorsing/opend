@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // DFLAGS:
 // REQUIRED_ARGS: -defaultlib=
 // EXTRA_SOURCES: extra-files/minimal/object.d

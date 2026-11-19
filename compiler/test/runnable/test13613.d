@@ -72,3 +72,5 @@ void main()
     assert(s.x is &a);
     assert(s.y is &b);
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

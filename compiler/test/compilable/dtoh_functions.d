@@ -1,5 +1,5 @@
 /+
-REQUIRED_ARGS: -HC -c -o-
+REQUIRED_ARGS: -d -HC -c -o-
 PERMUTE_ARGS:
 TEST_OUTPUT:
 ---

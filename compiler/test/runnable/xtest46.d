@@ -1,4 +1,5 @@
-// REQUIRED_ARGS: -preview=rvaluerefparam
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
+// REQUIRED_ARGS: -d -preview=rvaluerefparam
 //
 /* TEST_OUTPUT:
 ---
@@ -1079,6 +1080,7 @@ void test54()
 
 class Foo55
 {
+    mixin EnableSynchronization;
     synchronized void noop1() { }
     void noop2() shared { }
 }

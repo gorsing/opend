@@ -1,4 +1,4 @@
-/* REQUIRED_ARGS: -verrors=0
+/* REQUIRED_ARGS: -d -verrors=0
 TEST_OUTPUT:
 ---
 fail_compilation/diag9679.d(15): Error: variable `diag9679.main.n` - storage class `auto` has no effect if type is not inferred, did you mean `scope`?

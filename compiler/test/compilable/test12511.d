@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/a12511.d
 module test12511;
 

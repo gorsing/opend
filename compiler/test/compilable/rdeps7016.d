@@ -6,9 +6,10 @@ COMPILED_IMPORTS: extra-files/rdeps7016a.d extra-files/rdeps7016b.d
 TRANSFORM_OUTPUT: remove_lines("druntime")
 TEST_OUTPUT:
 ---
-depsImport rdeps7016 ($p:rdeps7016.d$) : private : rdeps7016a ($p:rdeps7016a.d$)
-depsImport rdeps7016a ($p:rdeps7016a.d$) : private : rdeps7016b ($p:rdeps7016b.d$)
-depsImport rdeps7016b ($p:rdeps7016b.d$) : private : rdeps7016 ($p:rdeps7016.d$)
+depsImport rdeps7016 (compilable/rdeps7016.d) : private : rdeps7016a (compilable/extra-files/rdeps7016a.d)
+depsVersion rdeps7016 (compilable/rdeps7016.d) : OD_TestRunner
+depsImport rdeps7016a (compilable/extra-files/rdeps7016a.d) : private : rdeps7016b (compilable/extra-files/rdeps7016b.d)
+depsImport rdeps7016b (compilable/extra-files/rdeps7016b.d) : private : rdeps7016 (compilable/rdeps7016.d)
 ---
 */
 

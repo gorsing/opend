@@ -11,3 +11,5 @@ void test22749()
     S22749 s;
     void* ptr = &s.field;
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

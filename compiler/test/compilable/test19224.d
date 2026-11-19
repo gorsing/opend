@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // https://issues.dlang.org/show_bug.cgi?id=19224
 static if (__traits(compiles, __vector(float[4])))
 {

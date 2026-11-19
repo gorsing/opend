@@ -1,8 +1,17 @@
 /*
 TEST_OUTPUT:
 ---
-runnable/implicit.d(162): Deprecation: slice of static array temporary returned by `pureMaker3c()` assigned to longer lived variable `z1`
-runnable/implicit.d(163): Deprecation: slice of static array temporary returned by `pureMaker3c()` assigned to longer lived variable `z2`
+runnable/implicit.d(118): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(125): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(126): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(127): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(135): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(140): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(141): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(142): Deprecation: pointer arithmetic not allowed in @safe functions
+runnable/implicit.d(171): Deprecation: slice of static array temporary returned by `pureMaker3c()` assigned to longer lived variable `z1`
+runnable/implicit.d(172): Deprecation: slice of static array temporary returned by `pureMaker3c()` assigned to longer lived variable `z2`
+runnable/implicit.d(187): Deprecation: `void` initializers for pointers not allowed in non-`@system`/`@trusted` code
 ---
 
 RUN_OUTPUT:

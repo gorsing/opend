@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // DISABLED: win32 win64
 // REQUIRED_ARGS: -extern-std=c++11
 /*

@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 alias noreturn = typeof(*null);
 
 extern (C) noreturn exit();

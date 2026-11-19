@@ -4,7 +4,7 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/fail17630.d(13): Error: module `a17630` import `Erase` not found, did you mean variable `b17630.Erase`?
+fail_compilation/fail17630.d(13): Error: module `imports.a17630` import `Erase` not found, did you mean variable `b17630.Erase`?
 ---
 */
 

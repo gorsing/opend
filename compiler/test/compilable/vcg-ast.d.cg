@@ -1,0 +1,300 @@
+module vcg;
+import object;
+alias xyz = vcg;
+alias named = vcg;
+template Seq(A...)
+{
+	alias Seq = A;
+}
+(int, int, int) a = AliasSeq!(1, 2, 3);
+template R(T)
+{
+	struct _R
+	{
+		T elem;
+	}
+}
+int x;
+static foreach (i; AliasSeq!(0, 1, 2))
+{
+	mixin("int a" ~ i.stringof ~ " = 1;");
+}
+void foo()
+{
+	int a0 = 1;
+	int a1 = 1;
+	int a2 = 1;
+}
+class C : Object
+{
+	invariant
+	{
+	}
+	invariant
+	{
+		assert(true, _d_assert_fail("", true));
+	}
+	int foo()
+	in
+	{
+	}
+	in (true)
+	out
+	{
+	}
+	out(r)
+	{
+	}
+	out (; true)
+	out (r; true)
+	{
+		pure nothrow @nogc @safe void __require()
+		{
+			{
+				{
+				}
+			}
+			{
+				assert(true, _d_assert_fail("", true));
+			}
+		}
+		__require();
+		this.__invariant();
+		__result = 2;
+		goto __returnLabel;
+		__returnLabel:
+		this.__invariant();
+		pure nothrow @nogc @safe void __ensure(ref const(int) __result)
+		{
+			{
+			}
+			{
+				const ref const(int) r = __result;
+				{
+				}
+			}
+			assert(true, _d_assert_fail("", true));
+			{
+				const ref const(int) r = __result;
+				assert(true, _d_assert_fail("", true));
+			}
+		}
+		__ensure(__result);
+		return __result;
+	}
+	invariant
+	{
+		this.__invariant0() , this.__invariant1();
+	}
+}
+enum __c_wchar_t : dchar;
+alias wchar_t = __c_wchar_t;
+T[] values(T)()
+{
+	T[] values = [T()];
+	return values;
+}
+void main()
+{
+	values();
+	return 0;
+}
+R!int
+{
+	struct _R
+	{
+		int elem;
+	}
+}
+mixin _d_cmain!();
+{
+	extern (C)
+	{
+		extern (C) int _d_run_main(int argc, char** argv, void* mainFunc);
+		extern (C) int _Dmain(char[][] args);
+		version (Emscripten)
+		{
+			pragma (mangle, "__main_argc_argv")export extern (C) int main(int argc, char** argv)
+			{
+				return _d_run_main(argc, argv, &_Dmain);
+			}
+		}
+		else
+		{
+			version (OD_TestRunner)
+			{
+			}
+			else
+			{
+				extern (C) int main(int argc, char** argv)
+				{
+					return _d_run_main(argc, argv, & _Dmain);
+				}
+			}
+		}
+		version (Solaris)
+		{
+			extern (C) int _main(int argc, char** argv)
+			{
+				return main(argc, argv);
+			}
+		}
+	}
+}
+_d_assert_fail!bool
+{
+	string _d_assert_fail(B...)(scope const string comp, auto ref scope const A a, auto ref scope const B b) if (B.length != 0 || A.length != 1)
+	{
+		if (inFinalizer())
+			return "Assertion failed (rich formatting is disabled in finalizers)";
+		string[A.length + B.length] vals;
+		static foreach (idx; 0 .. A.length)
+		{
+			vals[idx] = miniFormatFakeAttributes(a[idx]);
+		}
+		static foreach (idx; 0 .. B.length)
+		{
+			vals[A.length + idx] = miniFormatFakeAttributes(b[idx]);
+		}
+		immutable token = invertCompToken(comp);
+		return combine(vals[0..A.length], token, vals[A.length..__dollar]);
+	}
+
+}
+_d_assert_fail!bool
+{
+	pure nothrow @nogc @safe string _d_assert_fail(scope const(string) op, scope const(bool) a)
+	{
+		if (inFinalizer())
+			return "Assertion failed (rich formatting is disabled in finalizers)";
+		string[2] vals = [miniFormatFakeAttributes(a), "true"];
+		immutable immutable(string) token = __equals(op, "!") ? "==" : "!=";
+		return combine(vals[0..1], token, vals[1..2]);
+	}
+
+}
+inFinalizer!()
+{
+	pure nothrow @nogc @safe bool inFinalizer()
+	{
+		import core.memory : GC;
+		return !__ctfe && (*assumeFakeAttributes(& inFinalizer))();
+	}
+
+}
+assumeFakeAttributes!(extern (C) bool function() nothrow @nogc @safe)
+{
+	auto pure nothrow @nogc @trusted bool function() pure nothrow @nogc @safe assumeFakeAttributes(extern (C) bool function() nothrow @nogc @safe t)
+	{
+		import core.internal.traits : Parameters, ReturnType;
+		alias RT = bool;
+		alias P = ();
+		alias type = bool function() pure nothrow @nogc @safe;
+		return cast(bool function() pure nothrow @nogc @safe)t;
+	}
+
+}
+ReturnType!(extern (C) bool function() nothrow @nogc @safe)
+{
+	alias ReturnType = bool;
+
+}
+FunctionTypeOf!(extern (C) bool function() nothrow @nogc @safe)
+{
+	alias nothrow @nogc @safe extern (C) bool FunctionTypeOf();
+
+}
+Parameters!(extern (C) bool function() nothrow @nogc @safe)
+{
+	alias Parameters = ();
+
+}
+miniFormatFakeAttributes!bool
+{
+	pure nothrow @nogc @safe string miniFormatFakeAttributes(ref scope const(bool) t)
+	{
+		alias miniT = pure nothrow @nogc @safe string miniFormat(ref scope const(bool) v)
+		{
+			import core.internal.traits : isAggregateType;
+			return v ? "true" : "false";
+		}
+		;
+		return (*assumeFakeAttributes(& miniFormat))(t);
+	}
+
+}
+miniFormat!bool
+{
+	pure nothrow @nogc @safe string miniFormat(ref scope const(bool) v)
+	{
+		import core.internal.traits : isAggregateType;
+		return v ? "true" : "false";
+	}
+
+}
+assumeFakeAttributes!(string function(ref scope const(bool)) pure nothrow @nogc @safe)
+{
+	auto pure nothrow @nogc @trusted string function(ref scope const(bool)) pure nothrow @nogc @safe assumeFakeAttributes(string function(ref scope const(bool)) pure nothrow @nogc @safe t)
+	{
+		import core.internal.traits : Parameters, ReturnType;
+		alias RT = string;
+		alias P = (ref scope const(bool));
+		alias type = string function(ref scope const(bool)) pure nothrow @nogc @safe;
+		return t;
+	}
+
+}
+ReturnType!(string function(ref scope const(bool)) pure nothrow @nogc @safe)
+{
+	alias ReturnType = string;
+
+}
+FunctionTypeOf!(string function(ref scope const(bool)) pure nothrow @nogc @safe)
+{
+	alias pure nothrow @nogc @safe string FunctionTypeOf(ref scope const(bool));
+
+}
+Parameters!(string function(ref scope const(bool)) pure nothrow @nogc @safe)
+{
+	alias Parameters = (ref scope const(bool));
+
+}
+__equals!(char, char)
+{
+	pure nothrow @nogc @trusted bool __equals(scope const(char[]) lhs, scope const(char[]) rhs)
+	{
+		const const(ulong) length = lhs.length;
+		if (__ctfe)
+			return length == rhs.length && isEqual(cast(const(char)*)lhs, cast(const(char)*)rhs, length);
+		else
+		{
+			import core.stdc.string : memcmp;
+			return length == rhs.length && (!length || 0 == memcmp(cast(const(void*))cast(const(char)*)lhs, cast(const(void*))cast(const(char)*)rhs, length * 1LU));
+		}
+	}
+
+}
+RTInfo!(C)
+{
+	enum immutable(void)* RTInfo = null;
+
+}
+NoPointersBitmapPayload!1LU
+{
+	enum ulong[1] NoPointersBitmapPayload = [0LU];
+
+}
+values!(__c_wchar_t)
+{
+	pure nothrow @safe __c_wchar_t[] values()
+	{
+		__c_wchar_t[] values = [cast(__c_wchar_t)'\0'];
+		return values;
+	}
+
+}
+RTInfo!(_R)
+{
+	enum immutable(void)* RTInfo = null;
+
+}

@@ -10,11 +10,11 @@ fail_compilation/diag20888.d(39): Error: return value `callback` of type `int de
 fail_compilation/diag20888.d(39):        Did you intend to call the delegate?
 fail_compilation/diag20888.d(44): Error: return value `callback` of type `int delegate()*` does not match return type `int`, and cannot be implicitly converted
 fail_compilation/diag20888.d(49): Error: return value `callback` of type `int delegate()` does not match return type `string`, and cannot be implicitly converted
-fail_compilation/diag20888.d(54): Error: return value `() => 3755` of type `int function() pure nothrow @nogc @safe` does not match return type `int`, and cannot be implicitly converted
+fail_compilation/diag20888.d(54): Error: return value `__lambda1` of type `int function() pure nothrow @nogc @safe` does not match return type `int`, and cannot be implicitly converted
 fail_compilation/diag20888.d(54):        Did you intend to call the function pointer?
 fail_compilation/diag20888.d(59): Error: `return` expression expected
 fail_compilation/diag20888.d(64): Error: cannot return non-void from `void` function
-fail_compilation/diag20888.d(70): Error: return value `() => i` of type `int delegate() pure nothrow @nogc @safe` does not match return type `int`, and cannot be implicitly converted
+fail_compilation/diag20888.d(70): Error: return value `__lambda2` of type `int delegate() pure nothrow @nogc @safe` does not match return type `int`, and cannot be implicitly converted
 fail_compilation/diag20888.d(70):        Did you intend to call the delegate?
 ---
 */

@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -O -m64
+// REQUIRED_ARGS: -d -O -m64
 import core.simd;
 
 double dot (double2 a) {

@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/ice11054a.d
 import imports.ice11054a;
 

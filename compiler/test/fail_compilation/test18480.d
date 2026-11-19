@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -i
+// REQUIRED_ARGS: -d -i
 /*
 TEST_OUTPUT:
 ---

@@ -7,5 +7,5 @@ class LeClass {
 
 void main()
 {
-    static assert([__traits(allMembers, LeClass)] == ["toString", "toHash", "opCmp", "opEquals", "Monitor", "factory"]);
+    static assert([__traits(allMembers, LeClass)] == ["toString", "toHash", "opCmp", "opEquals", "Monitor", "__monitor", "EnableSynchronization", "factory"]);
 }

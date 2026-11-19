@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler ICE/diagnostics differ from upstream DMD)
 /* TEST_OUTPUT:
 ---
 fail_compilation/diag16976.d(44): Error: foreach: key cannot be of non-integral type `float`

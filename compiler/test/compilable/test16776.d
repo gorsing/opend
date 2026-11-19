@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // ARG_SETS: -i
 // PERMUTE_ARGS:
 // LINK:

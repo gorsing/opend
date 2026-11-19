@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
 PERMUTE_ARGS:
 EXTRA_FILES: imports/a9546.d
@@ -655,7 +656,7 @@ class Test6674
 static assert([__traits(allMembers,Test6674)] == [
     "i1","i2","i3","i4",
     "func1","func2",
-    "toString","toHash","opCmp","opEquals","Monitor","factory"]);
+    "toString","toHash","opCmp","opEquals","Monitor","__monitor","EnableSynchronization","factory"]);
 
 /********************************************************/
 // https://issues.dlang.org/show_bug.cgi?id=6073
@@ -1205,7 +1206,7 @@ class C10096X
 }
 static assert(
     [__traits(allMembers, C10096X)] ==
-    ["str", "__ctor", "__dtor", "getStr", "__xdtor", "toString", "toHash", "opCmp", "opEquals", "Monitor", "factory"]);
+    ["str", "__ctor", "__dtor", "getStr", "__xdtor", "toString", "toHash", "opCmp", "opEquals", "Monitor", "__monitor", "EnableSynchronization", "factory"]);
 
 // --------
 

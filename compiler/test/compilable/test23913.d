@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_FILES: imports/library.c
 
 // https://issues.dlang.org/show_bug.cgi?id=23913

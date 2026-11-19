@@ -44,7 +44,7 @@ struct S final
     union
     {
         int32_t x;
-        char c[4$?:32=u|64=LLU$];
+        char c[4LLU];
     };
     struct
     {
@@ -69,7 +69,7 @@ struct S final
         innerBar()
     {
     }
-    S(int32_t y, double z = NAN, int32_t outerPrivate = 0, int32_t innerPrivate = 0, int32_t innerBar = 0) :
+    S(int32_t y, double z = 0.0, int32_t outerPrivate = 0, int32_t innerPrivate = 0, int32_t innerBar = 0) :
         y(y),
         z(z),
         outerPrivate(outerPrivate),

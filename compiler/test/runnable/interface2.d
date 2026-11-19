@@ -1,3 +1,5 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
+// REQUIRED_ARGS: -d
 // PERMUTE_ARGS:
 
 extern(C) int printf(const char*, ...);

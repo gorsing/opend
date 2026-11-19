@@ -5,7 +5,7 @@ OUTPUT_FILES: ${RESULTS_DIR}/runnable/mixin.mixin
 TEST_OUTPUT:
 ----
 === ${RESULTS_DIR}/runnable/mixin.mixin
-// expansion at compilable/mixin.d(14)
+// expansion at compilable/mixin.d(14) {
 int x =
         123;
 
@@ -14,6 +14,7 @@ int x =
 
 
         int z = x + y;
+// }
 ----
 
 https://issues.dlang.org/show_bug.cgi?id=1870

@@ -12,3 +12,5 @@ import imports.test21164b;
 auto GB(D!Q)
 {
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

@@ -866,6 +866,7 @@ void test11()
 
 class C17481
 {
+mixin EnableSynchronization;
     synchronized void trigger(){ new ubyte[1]; }
 }
 

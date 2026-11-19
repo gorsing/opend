@@ -1,5 +1,5 @@
 // PERMUTE_ARGS:
-// REQUIRED_ARGS: -Icompilable/extra-files
+// REQUIRED_ARGS: -d -Icompilable/extra-files
 // EXTRA_FILES: extra-files/example7190/controllers/HomeController.d
 // EXTRA_FILES: extra-files/example7190/models/HomeModel.d
 // EXTRA_FILES: extra-files/serenity7190/core/Controller.d

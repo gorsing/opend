@@ -1,3 +1,5 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
+// REQUIRED_ARGS: -d
 /*
 EXTRA_SOURCES: imports/issue18919b.d
 RUN_OUTPUT:

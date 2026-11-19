@@ -1,4 +1,4 @@
-// REQUIRED_ARGS: -inline -O
+// REQUIRED_ARGS: -d -inline -O
 
 // https://issues.dlang.org/show_bug.cgi?id=23307
 import core.simd;

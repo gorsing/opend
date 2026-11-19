@@ -3,7 +3,8 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/fail23861.d(24): Error: cannot implicitly convert expression `3` of type `int` to `Foo`
+fail_compilation/fail23861.d(25): Error: cannot implicitly convert expression `3` of type `int` to `Foo`
+fail_compilation/fail23861.d(25): Error: cannot implicitly convert expression `3` of type `int` to `Foo`
 ---
 */
 

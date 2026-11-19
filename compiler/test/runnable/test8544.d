@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXECUTE_ARGS: foo bar doo
 // PERMUTE_ARGS:
 import core.stdc.stdio;

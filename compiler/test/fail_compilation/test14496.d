@@ -1,12 +1,12 @@
 /*
 TEST_OUTPUT:
 ---
-fail_compilation/test14496.d(21): Error: `void` initializers for pointers not allowed in safe functions
-fail_compilation/test14496.d(24): Error: `void` initializers for pointers not allowed in safe functions
-fail_compilation/test14496.d(28): Error: `void` initializers for pointers not allowed in safe functions
-fail_compilation/test14496.d(48): Error: `void` initializers for pointers not allowed in safe functions
-fail_compilation/test14496.d(49): Error: `void` initializers for pointers not allowed in safe functions
-fail_compilation/test14496.d(50): Error: `void` initializers for pointers not allowed in safe functions
+fail_compilation/test14496.d(21): Error: `void` initializers for pointers not allowed in `@safe` code
+fail_compilation/test14496.d(24): Error: `void` initializers for pointers not allowed in `@safe` code
+fail_compilation/test14496.d(28): Error: `void` initializers for pointers not allowed in `@safe` code
+fail_compilation/test14496.d(48): Error: `void` initializers for pointers not allowed in `@safe` code
+fail_compilation/test14496.d(49): Error: `void` initializers for pointers not allowed in `@safe` code
+fail_compilation/test14496.d(50): Error: `void` initializers for pointers not allowed in `@safe` code
 ---
 */
 // https://issues.dlang.org/show_bug.cgi?id=14496

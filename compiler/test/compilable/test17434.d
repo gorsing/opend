@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // https://issues.dlang.org/show_bug.cgi?id=17434
 
 // EXTRA_FILES: test17434a.d imports/imp17434a.d imports/imp17434b.d

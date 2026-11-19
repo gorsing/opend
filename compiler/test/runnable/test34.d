@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 module test34;
 
 import core.exception;
@@ -560,6 +561,7 @@ void test30()
 
 class C31
 {
+    mixin EnableSynchronization;
     synchronized invariant() { int x; }
 }
 

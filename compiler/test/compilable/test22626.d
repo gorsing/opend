@@ -5,6 +5,7 @@ shared int k;
 
 class Oops
 {
+mixin EnableSynchronization;
     shared int a;
     shared int* pa;
     synchronized void oops()

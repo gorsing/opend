@@ -171,3 +171,5 @@ void opaqueProperties()
     int min = Foo.min;
     int max = Foo.max;
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

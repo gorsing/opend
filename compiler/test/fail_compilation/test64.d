@@ -2,7 +2,11 @@
 EXTRA_FILES: imports/test64a.d
 TEST_OUTPUT:
 ---
-fail_compilation/imports/test64a.d(1): Error: module `imports` from file fail_compilation/imports/test64a.d conflicts with package name imports
+fail_compilation/test64.d(16): Error: unable to read module `imports`
+fail_compilation/test64.d(16):        Expected 'imports.d' or 'imports/package.d' in one of the following import paths:
+import path[0] = fail_compilation
+import path[1] = /workspace/compiler/test/../../druntime/import
+import path[2] = /workspace/compiler/test/../../phobos
 ---
 */
 

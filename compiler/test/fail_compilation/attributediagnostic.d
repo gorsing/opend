@@ -9,7 +9,7 @@ fail_compilation/attributediagnostic.d(30):        `asm` statement is assumed to
 fail_compilation/attributediagnostic.d(25):        `attributediagnostic.layer1` is declared here
 fail_compilation/attributediagnostic.d(46): Error: `@safe` function `D main` cannot call `@system` function `attributediagnostic.system1`
 fail_compilation/attributediagnostic.d(35):        which wasn't inferred `@safe` because of:
-fail_compilation/attributediagnostic.d(35):        cast from `uint` to `int*` not allowed in safe code
+fail_compilation/attributediagnostic.d(35):        cast from `uint` to `int*` not allowed in `@safe` code
 fail_compilation/attributediagnostic.d(33):        `attributediagnostic.system1` is declared here
 fail_compilation/attributediagnostic.d(47): Error: `@safe` function `D main` cannot call `@system` function `attributediagnostic.system2`
 fail_compilation/attributediagnostic.d(41):        which wasn't inferred `@safe` because of:

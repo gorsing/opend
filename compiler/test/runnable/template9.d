@@ -1,5 +1,5 @@
 /*
-REQUIRED_ARGS: -preview=rvaluerefparam
+REQUIRED_ARGS: -d -preview=rvaluerefparam
 PERMUTE_ARGS:
 EXTRA_FILES: imports/testmangle.d
 TEST_OUTPUT:

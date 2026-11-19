@@ -100,6 +100,7 @@ void test6453()
     }
     static class C6453c
     {
+    mixin EnableSynchronization;
         pure    synchronized invariant() {}
         nothrow synchronized invariant() {}
         @safe   synchronized invariant() {}

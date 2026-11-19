@@ -16,3 +16,5 @@ void isPrettyPropertyName()
 
     unaryFun!();
 }
+// OpenD: suppress intentional deprecations
+// REQUIRED_ARGS: -d

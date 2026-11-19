@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // EXTRA_CPP_SOURCES: cpp7925.cpp
 
 /*

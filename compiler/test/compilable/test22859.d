@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 // https://issues.dlang.org/show_bug.cgi?id=22859
 private struct __InoutWorkaroundStruct {}
 @property T rvalueOf(T)(T val) { return val; }

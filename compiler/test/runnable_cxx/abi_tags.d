@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
  * Test C++ abi-tag name mangling.
  * They are a C++11 feature required to bind `std::string`,

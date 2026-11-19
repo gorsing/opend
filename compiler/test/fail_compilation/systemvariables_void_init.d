@@ -2,9 +2,9 @@
 REQUIRED_ARGS: -preview=systemVariables
 TEST_OUTPUT:
 ---
-fail_compilation/systemvariables_void_init.d(29): Error: `void` initializers for `@system` variables not allowed in safe functions
-fail_compilation/systemvariables_void_init.d(30): Error: `void` initializers for `@system` variables not allowed in safe functions
-fail_compilation/systemvariables_void_init.d(31): Error: `void` initializers for `@system` variables not allowed in safe functions
+fail_compilation/systemvariables_void_init.d(29): Error: `void` initializers for `@system` variables not allowed in `@safe` code
+fail_compilation/systemvariables_void_init.d(30): Error: `void` initializers for `@system` variables not allowed in `@safe` code
+fail_compilation/systemvariables_void_init.d(31): Error: `void` initializers for `@system` variables not allowed in `@safe` code
 ---
 */
 

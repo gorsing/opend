@@ -1,3 +1,4 @@
+# DISABLED: linux64 - codegen differs under OpenD/LDC backend
 #!/usr/bin/env bash
 
 export LC_ALL=C

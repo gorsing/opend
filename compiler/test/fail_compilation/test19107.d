@@ -2,12 +2,7 @@
 EXTRA_FILES: imports/imp19661.d imports/test19107a.d imports/test19107b.d
 TEST_OUTPUT:
 ---
-fail_compilation/test19107.d(24): Error: template `test19107.all` is not callable using argument types `!((c) => c)(string[])`
-fail_compilation/test19107.d(18):        Candidate is: `all(alias pred, T)(T t)`
-  with `pred = __lambda2,
-       T = string[]`
-  must satisfy the following constraint:
-`       is(typeof(I!pred(t)))`
+fail_compilation/imports/test19107b.d(3): Error: from file test19107a.d must be imported with 'import imports.test19107a.d;'
 ---
 */
 

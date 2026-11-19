@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 
 static if (__traits(compiles, __vector(float[4])))
 {

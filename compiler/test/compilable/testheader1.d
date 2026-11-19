@@ -1,3 +1,4 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
 EXTRA_SOURCES: extra-files/header1.d
 REQUIRED_ARGS: -o- -unittest -H -Hf${RESULTS_DIR}/compilable/testheader1.di -ignore

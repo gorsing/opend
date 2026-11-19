@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
-# Implements CI steps for Cirrus CI and Semaphore.
-# This file is invoked by .cirrus.yml and semaphoreci.sh.
+# Implements CI steps for Cirrus CI.
+# This file is invoked by .cirrus.yml.
 
 set -uexo pipefail
 
 # N: number of parallel build jobs
-if [ -z ${N+x} ] ; then echo "Variable 'N' needs to be set."; exit 1; fi
+if [ -z "${N:-}" ] ; then echo "Variable 'N' needs to be set."; exit 1; fi
 # OS_NAME: linux|osx|freebsd|windows
-if [ -z ${OS_NAME+x} ] ; then echo "Variable 'OS_NAME' needs to be set."; exit 1; fi
+if [ -z "${OS_NAME:-}" ] ; then echo "Variable 'OS_NAME' needs to be set."; exit 1; fi
 # FULL_BUILD: true|false (true on Linux: use full permutations for DMD tests)
-if [ -z ${FULL_BUILD+x} ] ; then echo "Variable 'FULL_BUILD' needs to be set."; exit 1; fi
+if [ -z "${FULL_BUILD:-}" ] ; then echo "Variable 'FULL_BUILD' needs to be set."; exit 1; fi
 # MODEL: 32|64
-if [ -z ${MODEL+x} ] ; then echo "Variable 'MODEL' needs to be set."; exit 1; fi
+if [ -z "${MODEL:-}" ] ; then echo "Variable 'MODEL' needs to be set."; exit 1; fi
 # HOST_DMD: dmd[-<version>]|ldc[-<version>]|gdmd-<version>
-if [ ! -z ${HOST_DC+x} ] ; then HOST_DMD=${HOST_DC}; fi
-if [ -z ${HOST_DMD+x} ] ; then echo "Variable 'HOST_DMD' needs to be set."; exit 1; fi
+if [ -n "${HOST_DC:-}" ] ; then HOST_DMD=${HOST_DC}; fi
+if [ -z "${HOST_DMD:-}" ] ; then echo "Variable 'HOST_DMD' needs to be set."; exit 1; fi
 # CI_DFLAGS: Optional flags to pass to the build
 if [ -z ${CI_DFLAGS+x} ] ; then CI_DFLAGS=""; fi
 
@@ -24,7 +24,7 @@ build_path=generated/$OS_NAME/release/$MODEL
 
 if [ "$OS_NAME" == "linux" ]; then
     # use faster ld.gold linker on x86_64-linux
-    if [ "$MODEL" == "64" ]; then
+    if [ "$MODEL" == "64" ] && [ -x /usr/bin/ld.gold ]; then
         mkdir -p linker
         rm -f linker/ld
         ln -s /usr/bin/ld.gold linker/ld
@@ -35,7 +35,19 @@ else
     NM=nm
 
   if [ "$OS_NAME" == "osx" ]; then
-    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    # Homebrew uses /opt/homebrew on Apple Silicon and /usr/local on Intel
+    brew_prefix=""
+    if command -v brew > /dev/null; then
+      brew_prefix="$(brew --prefix 2>/dev/null || true)"
+    fi
+    for prefix in "$brew_prefix" /opt/homebrew /usr/local; do
+      if [ -n "$prefix" ] && [ -d "$prefix/opt/llvm/bin" ]; then
+        export PATH="$prefix/opt/llvm/bin:$PATH"
+        break
+      fi
+    done
+    # Apple Silicon requires macOS 11+; pin the target on newer runners
+    export MACOSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET:-11}"
   fi
 fi
 
@@ -48,6 +60,7 @@ clone() {
         if git clone --depth=1 --branch "$branch" "$url" "$path" --quiet; then
             break
         elif [ $i -lt 4 ]; then
+            rm -rf "$path"
             sleep $((1 << $i))
         else
             echo "Failed to clone: ${url}"
@@ -59,15 +72,19 @@ clone() {
 # build dmd (incl. building and running the unittests), druntime, phobos
 build() {
     if [ "$OS_NAME" != "windows" ]; then
+        set +u
         source ~/dlang/*/activate # activate host compiler, incl. setting `DMD`
+        set -u
     fi
     $DMD compiler/src/build.d -ofgenerated/build
     generated/build -j$N MODEL=$MODEL HOST_DMD=$DMD DFLAGS="$CI_DFLAGS" BUILD=debug unittest
     generated/build -j$N MODEL=$MODEL HOST_DMD=$DMD DFLAGS="$CI_DFLAGS" ENABLE_RELEASE=1 dmd
     make -j$N -C druntime MODEL=$MODEL
-    make -j$N -C ../phobos MODEL=$MODEL
+    make -j$N -C phobos MODEL=$MODEL
     if [ "$OS_NAME" != "windows" ]; then
+        set +u
         deactivate # deactivate host compiler
+        set -u
     fi
 }
 
@@ -123,20 +140,22 @@ test_druntime() {
 
 # build and run Phobos unit tests
 test_phobos() {
-    make -j$N -C ../phobos MODEL=$MODEL unittest
+    make -j$N -C phobos MODEL=$MODEL unittest
 }
 
 # test dub package
 test_dub_package() {
     if [ "$OS_NAME" != "windows" ]; then
+        set +u
         source ~/dlang/*/activate # activate host compiler
+        set -u
     fi
     # GDC's standard library is too old for some example scripts
     if [[ "${DMD:-dmd}" =~ "gdmd" ]] ; then
         echo "Skipping DUB examples on GDC."
     else
         local abs_build_path="$PWD/$build_path"
-        pushd test/dub_package
+        pushd compiler/test/dub_package
         for file in *.d ; do
             dubcmd=""
             # running impvisitor is failing right now
@@ -150,10 +169,12 @@ test_dub_package() {
         done
         popd
         # Test rdmd build
-        "${build_path}/dmd" -version=NoBackend -version=GC -version=NoMain -Jgenerated/dub -Jsrc/dmd/res -Isrc -i -run test/dub_package/frontend.d
+        "${build_path}/dmd" -version=NoBackend -version=GC -version=NoMain -Jgenerated/dub -Jcompiler/src/dmd/res -Icompiler/src -i -run compiler/test/dub_package/frontend.d
     fi
     if [ "$OS_NAME" != "windows" ]; then
+        set +u
         deactivate
+        set -u
     fi
 }
 
@@ -161,13 +182,13 @@ test_dub_package() {
 setup_repos() {
     local branch="$1"
     for proj in phobos; do
-        if [ ! -d ../$proj ]; then
-            if [ $branch != master ] && [ $branch != stable ] &&
+        if [ ! -d $proj ] && [ ! -d ../$proj ]; then
+            if [ "$branch" != master ] && [ "$branch" != stable ] &&
                    ! git ls-remote --exit-code --heads https://github.com/dlang/$proj.git $branch > /dev/null; then
                 # use master as fallback for other repos to test feature branches
-                clone https://github.com/dlang/$proj.git ../$proj master
+                clone https://github.com/dlang/$proj.git $proj master
             else
-                clone https://github.com/dlang/$proj.git ../$proj $branch
+                clone https://github.com/dlang/$proj.git $proj $branch
             fi
         fi
     done
@@ -207,11 +228,13 @@ download_install_sh() {
   for i in {0..4}; do
     for mirror in "${mirrors[@]}" ; do
         if curl -fsS -A "$CURL_USER_AGENT" --connect-timeout 5 --speed-time 30 --speed-limit 1024 "$mirror" -o "$location" ; then
-            break 2
+            return 0
         fi
     done
     sleep $((1 << i))
   done
+  echo "Failed to download install.sh" >&2
+  exit 1
 }
 
 # install D host compiler
@@ -248,7 +271,7 @@ codecov()
 if [ "$#" -gt 0 ]; then
   case $1 in
     install_host_compiler) install_host_compiler ;;
-    setup_repos) setup_repos "$2" ;; # ci/run.sh setup_repos <git branch>
+    setup_repos) setup_repos "${2:-master}" ;; # ci/run.sh setup_repos <git branch>
     build) build ;;
     rebuild) rebuild "${2:-}" ;; # ci/run.sh rebuild [1] (use `1` to compare binaries to test reproducible build)
     test) test ;;

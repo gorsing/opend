@@ -1334,7 +1334,7 @@ void DtoDefineFunction(FuncDeclaration *fd, bool linkageAvailableExternally) {
 
   if (gIR->dcomputetarget && hasKernelAttr(fd)) {
     auto fn = gIR->module.getFunction(fd->mangleString);
-    gIR->dcomputetarget->addKernelMetadata(fd, fn);
+    gIR->dcomputetarget->addKernelMetadata(fd, fn, nullptr);
   }
 
   if (func->getLinkage() == LLGlobalValue::WeakAnyLinkage &&

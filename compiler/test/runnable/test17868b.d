@@ -1,5 +1,5 @@
 /*
-REQUIRED_ARGS: -betterC
+REQUIRED_ARGS: -d -betterC
 RUN_OUTPUT:
 ---
 init

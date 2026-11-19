@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 __import imports.cimports2a;
 __import imports.cimports2b;
 

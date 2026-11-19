@@ -9,6 +9,9 @@ fail_compilation/test21008.d(117):        too few arguments, expected 1, got 0
 fail_compilation/test21008.d(117): Error: function `object.Object.opEquals(Object o)` is not callable using argument types `()`
 fail_compilation/test21008.d(117):        too few arguments, expected 1, got 0
 fail_compilation/test21008.d(117): Error: `Monitor` has no effect
+fail_compilation/test21008.d(117): Error: calling non-static function `__monitor` requires an instance of type `Object`
+fail_compilation/test21008.d(117): Error: template instance `EnableSynchronization!()` mixin templates are not regular templates
+fail_compilation/test21008.d(117): Error: `EnableSynchronization()` has no effect
 fail_compilation/test21008.d(117): Error: function `object.Object.factory(string classname)` is not callable using argument types `()`
 fail_compilation/test21008.d(117):        too few arguments, expected 1, got 0
 fail_compilation/test21008.d(105):        called from here: `handleMiddlewareAnnotation()`

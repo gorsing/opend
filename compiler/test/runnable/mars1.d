@@ -1,5 +1,5 @@
 /*
-REQUIRED_ARGS: -mcpu=native
+REQUIRED_ARGS: -d -mcpu=native
 PERMUTE_ARGS: -O -inline -ludicrous
 */
 

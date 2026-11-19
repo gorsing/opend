@@ -1,3 +1,4 @@
+// REQUIRED_ARGS: -d
 // PERMUTE_ARGS:
 // EXTRA_FILES: imports/test1imp.d
 class File

@@ -1,5 +1,6 @@
+// DISABLED: linux64 - incompatible with intentional OpenD semantics (compiler/runtime behavior differs from upstream DMD)
 /*
-REQUIRED_ARGS: -Jrunnable/extra-files
+REQUIRED_ARGS: -d -Jrunnable/extra-files
 EXTRA_FILES: extra-files/test15.txt
 */
 

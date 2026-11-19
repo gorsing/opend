@@ -551,7 +551,7 @@ set(FE_HDR
     ../compiler/src/dmd/attrib.h
     ../compiler/src/dmd/template.h
 )
-file(GLOB_RECURSE FE_RES     dmd/res/*.*)
+file(GLOB_RECURSE FE_RES     ../compiler/src/dmd/res/*.*)
 file(GLOB_RECURSE GEN_SRC    gen/*.cpp gen/abi/*.cpp)
 file(GLOB_RECURSE GEN_HDR    gen/*.h gen/abi/*.h)
 file(GLOB_RECURSE GEN_SRC_D  gen/*.d)
@@ -661,7 +661,7 @@ endif()
 include_directories(. dmd)
 append("-I${PROJECT_SOURCE_DIR}" DFLAGS_LDC)
 append("-I${PROJECT_BINARY_DIR}" DFLAGS_LDC)
-append("-J${PROJECT_SOURCE_DIR}/dmd/res" DFLAGS_LDC)
+append("-J${PROJECT_SOURCE_DIR}/../compiler/src/dmd/res" DFLAGS_LDC)
 
 append("-version=IN_LLVM" DFLAGS_LDC)
 append("-DIN_LLVM" LDC_CXXFLAGS)

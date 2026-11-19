@@ -4,6 +4,7 @@ extern(C) int printf(const char*, ...);
 
 class Abc : Throwable
 {
+mixin EnableSynchronization;
     this() pure
     {
         super("");

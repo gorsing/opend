@@ -13,6 +13,14 @@
 AttrSet::AttrSet(const AttrSet &base, unsigned index, LLAttribute attribute)
     : set(base.set.addAttributeAtIndex(gIR->context(), index, attribute)) {}
 
+AttrSet::AttrSet(const AttrSet &base, unsigned index,
+                 const llvm::Attribute &attribute)
+    : set(base.set) {
+  llvm::AttrBuilder builder(gIR->context());
+  builder.addAttribute(attribute);
+  add(index, builder);
+}
+
 AttrSet
 AttrSet::extractFunctionAndReturnAttributes(const llvm::Function *function) {
   auto old = function->getAttributes();
